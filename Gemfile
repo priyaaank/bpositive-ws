@@ -7,6 +7,7 @@ gem 'rails', '3.0.3'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
+  gem "factory_girl_rails"
 end
 gem 'autotest'
 
