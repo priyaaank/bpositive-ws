@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Donor do
 
   context "attributes" do
-
     it "should respond to first_name" do
       Donor.new.should respond_to(:first_name)
     end
@@ -19,26 +18,22 @@ describe Donor do
     it "should respond to blood group" do
       Donor.new.should respond_to(:blood_group)
     end
-    
   end
 
 
   context "relationships" do
-    
     it "should have address" do
       Donor.new.should respond_to(:address)
     end
-
   end
 
   context "address" do 
-
     it "should be deleted when donor is destroyed" do
       donor = Factory.build(:donor)
       address_id = donor.address.id
       donor.destroy
       Address.find_by_id(address_id).should be_nil
     end
-
   end
+  
 end
