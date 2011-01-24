@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110120180858) do
+ActiveRecord::Schema.define(:version => 20110124035450) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address_line1"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110120180858) do
 
   create_table "donations", :force => true do |t|
     t.datetime "date_of_donation"
+    t.integer  "donor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,6 +39,18 @@ ActiveRecord::Schema.define(:version => 20110120180858) do
     t.string   "last_name"
     t.string   "blood_group"
     t.date     "date_of_birth"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "health_checks", :force => true do |t|
+    t.integer  "weight"
+    t.string   "weight_unit"
+    t.integer  "blood_pressure"
+    t.string   "blood_pressure_unit"
+    t.integer  "height"
+    t.string   "height_unit"
+    t.integer  "donor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

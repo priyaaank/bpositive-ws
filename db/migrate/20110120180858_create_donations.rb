@@ -2,6 +2,7 @@ class CreateDonations < ActiveRecord::Migration
   def self.up
     create_table :donations do |t|
       t.datetime :date_of_donation
+      t.references :donor
 
       t.timestamps
     end
