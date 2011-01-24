@@ -22,8 +22,18 @@ describe Donor do
 
 
   context "relationships" do
-    it "should have address" do
+    it "should have an address" do
       Donor.new.should respond_to(:address)
+    end
+
+    it "should have multiple donations" do
+      Donor.new.should respond_to(:donations)
+      Donor.new.donations.is_a?(Array)
+    end
+
+    it "should have multiple health checks" do
+      Donor.new.should respond_to(:health_checks)
+      Donor.new.health_checks.is_a?(Array)
     end
   end
 
